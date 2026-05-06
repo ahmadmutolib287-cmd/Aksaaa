@@ -1,1 +1,112 @@
-# Aksaaa
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Aksa ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+.container {
+    margin-top: 100px;
+    animation: fadeIn 2s ease;
+}
+
+h1 {
+    font-size: 40px;
+}
+
+p {
+    font-size: 18px;
+    max-width: 500px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: white;
+    color: #ff4d6d;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: #ffe0e6;
+}
+
+/* animasi masuk */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* love jatuh */
+.heart {
+    position: absolute;
+    color: white;
+    font-size: 20px;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {transform: translateY(-10px);}
+    100% {transform: translateY(100vh);}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Hai Aksa ❤️</h1>
+    <p>
+        Aku cuma mau bilang... <br>
+        makasih ya udah selalu ada buat aku 😊 <br>
+        Semoga kita selalu bareng terus yaa 💕
+    </p>
+
+    <button class="btn" onclick='alert("Aku sayang kamu ❤️")'>
+        Klik ini 💌
+    </button>
+</div>
+
+<!-- musik -->
+<audio autoplay loop>
+    <source src="https://www.bensound.com/bensound-music/bensound-romantic.mp3" type="audio/mp3">
+</audio>
+
+<script>
+// bikin love jatuh
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 5000);
+}
+
+setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
